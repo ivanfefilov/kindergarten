@@ -4,13 +4,14 @@
   
   <body id='home'>
     <%= render 'shared/menu' %>
-    <div id="wrap" class="menu-open">
+    <div id="wrap">
       <%= render 'shared/main_nav' %>
       <%= render 'shared/hero' %>
       <div id="start" class="container content">
         <%= yield %>
       </div>
-      <%= render 'shared/footer' %>  
+      <%= render 'shared/footer' %>
+      <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>  
     </div>  
   </body>
 </html>
