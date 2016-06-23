@@ -10,7 +10,7 @@ class PostDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     id: Field::Number,
     title: Field::String,
-    body: Field::Text,
+    body: Field::CkeditorField,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -23,7 +23,6 @@ class PostDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :id,
     :title,
-    :body,
     :created_at,
   ].freeze
 
