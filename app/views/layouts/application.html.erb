@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Kindergarten</title>
-    <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
-  <body>
-    <%= yield %>
+  <%= render 'shared/head' %>
+  
+  <body id='home'>
+    <%= render 'shared/menu' %>
+    <div id="wrap" class="menu-open">
+      <%= render 'shared/main_nav' %>
+      <%= render 'shared/hero' %>
+      <div id="start" class="container content">
+        <%= yield %>
+      </div>
+      <%= render 'shared/footer' %>  
+    </div>  
   </body>
 </html>
