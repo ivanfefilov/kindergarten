@@ -1,12 +1,5 @@
 Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
-  namespace :admin do
-    resources :posts
-    resources :users
-
-    root to: "posts#index"
-  end
-
   #devise_for :users
   
   root 'pages#home' 
