@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160623171457) do
+ActiveRecord::Schema.define(version: 20160624132933) do
+
+  create_table "attachments", force: :cascade do |t|
+    t.integer  "parent_id",   null: false
+    t.string   "parent_type", null: false
+    t.string   "file",        null: false
+    t.string   "file_name"
+    t.integer  "file_size"
+    t.string   "file_type"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "ckeditor_assets", force: :cascade do |t|
     t.string   "data_file_name",               null: false
