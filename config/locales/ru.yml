@@ -54,6 +54,8 @@ ru:
         remember_me: "Запомнить меня"
         reset_password_token: "Ссылка сброса пароля"
         unlock_token: "Токен разблокировки"
+        first_name: "Имя"
+        last_name: "Фамилия"
     models:
       user: "Пользователь"
   devise:
@@ -138,6 +140,7 @@ ru:
         sign_in: "Войти"
       signed_in: "Вход в систему выполнен."
       signed_out: "Выход из системы выполнен."
+      sign_out: "Выйти"
     shared:
       links:
         back: "Назад"
