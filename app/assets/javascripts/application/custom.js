@@ -10,6 +10,10 @@
 
 $(document).ready(function() {
 	
+	if($('.alert')){
+		setTimeout(function(){$('.alert').fadeOut("slow"); }, 5000)
+	}
+	
 	/* off canvas menu ======================================= */
 	$('.menu-link, .close-menu').on('click', function(){
 		$('#wrap').toggleClass('menu-open');
