@@ -173,4 +173,9 @@ ru:
         one: "%{resource}: сохранение не удалось из-за %{count} ошибки:"
         other: "%{resource}: сохранение не удалось из-за %{count} ошибки:"
   admin:
-    back: ' или вернуться назад'          
+    back: ' или вернуться назад'
+  time:
+    formats:
+      default: "%d-%m-%Y"
+      short: "%b %d"
+      long: "%B %d, %Y"            

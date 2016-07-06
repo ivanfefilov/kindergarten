@@ -16,9 +16,9 @@ class PostDatatable < AjaxDatatablesRails::Base
   def data
     records.map do |record|
       [
+        link_to(record.title, admin_post_path(record.title)),
         record.title,
-        record.title,
-        record.created_at,
+        I18n.l(record.created_at, format: :default),
         link_to('Посмотреть', admin_post_path(record)),
         link_to('Редактировать', edit_admin_post_path(record)),
         link_to('Удалить', admin_post_path(record), method: :delete, data: {confirm: 'Вы действительно хотите удалить запись?'})
@@ -29,6 +29,4 @@ class PostDatatable < AjaxDatatablesRails::Base
   def get_raw_records
     Post.all
   end
-
-  # ==== Insert 'presenter'-like methods below if necessary
 end

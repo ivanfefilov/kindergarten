@@ -33,7 +33,7 @@ class Admin::PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to [:admin, @post], notice: 'Новость успешно создана.' }
+        format.html { redirect_to admin_posts_url, notice: 'Новость успешно создана.' }
         format.json { render :show, status: :created, location: @post }
       else
         format.html { render :new }

@@ -60,3 +60,5 @@ gem 'mini_magick'
 gem 'jquery-datatables-rails'#, git: 'git://github.com/rweng/jquery-datatables-rails.git', branch: 'master'
 gem 'ajax-datatables-rails'
 gem "kaminari"
+
+gem 'active_link_to'
