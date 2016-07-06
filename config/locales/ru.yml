@@ -56,6 +56,9 @@ ru:
         unlock_token: "Токен разблокировки"
         first_name: "Имя"
         last_name: "Фамилия"
+      post:
+        title: "Заголовок"
+        body: "Содержание"  
     models:
       user: "Пользователь"
   devise:
@@ -167,4 +170,6 @@ ru:
         few: "%{resource}: сохранение не удалось из-за %{count} ошибок:"
         many: "%{resource}: сохранение не удалось из-за %{count} ошибок:"
         one: "%{resource}: сохранение не удалось из-за %{count} ошибки:"
-        other: "%{resource}: сохранение не удалось из-за %{count} ошибки:"    
+        other: "%{resource}: сохранение не удалось из-за %{count} ошибки:"
+  admin:
+    back: ' или вернуться назад'          
