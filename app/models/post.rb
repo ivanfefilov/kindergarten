@@ -3,4 +3,6 @@ class Post < ApplicationRecord
   validates :body, presence: true
   
   has_many :attachments, as: :parent, dependent: :destroy, autosave: true, class_name: 'Attachment'
+  
+  scope :published, -> {where(published: true)}
 end

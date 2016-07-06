@@ -16,8 +16,9 @@ class PostDatatable < AjaxDatatablesRails::Base
   def data
     records.map do |record|
       [
-        link_to(record.title, admin_post_path(record.title)),
+        link_to(record.title, admin_post_path(record)),
         record.title,
+        (record.published ? 'Да' : 'Нет'), 
         I18n.l(record.created_at, format: :default),
         link_to('Посмотреть', admin_post_path(record)),
         link_to('Редактировать', edit_admin_post_path(record)),
