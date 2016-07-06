@@ -58,7 +58,8 @@ ru:
         last_name: "Фамилия"
       post:
         title: "Заголовок"
-        body: "Содержание"  
+        body: "Содержание"
+        created_at: "Дата создания"  
     models:
       user: "Пользователь"
   devise:

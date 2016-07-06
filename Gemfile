@@ -56,3 +56,7 @@ gem 'fancybox2-rails', '~> 0.2.8'
 gem 'ckeditor', '~> 4.1'
 gem 'carrierwave'
 gem 'mini_magick'
+
+gem 'jquery-datatables-rails'#, git: 'git://github.com/rweng/jquery-datatables-rails.git', branch: 'master'
+gem 'ajax-datatables-rails'
+gem "kaminari"

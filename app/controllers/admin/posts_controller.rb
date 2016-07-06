@@ -5,7 +5,11 @@ class Admin::PostsController < ApplicationController
   # GET /admin/posts
   # GET /admin/posts.json
   def index
-    @posts = Post.all
+    #@posts = Post.all
+    respond_to do |format|
+      format.html
+      format.json { render json: PostDatatable.new(view_context) }
+    end
   end
 
   # GET /admin/posts/1
