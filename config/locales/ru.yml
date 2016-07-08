@@ -60,7 +60,8 @@ ru:
         title: "Заголовок"
         body: "Содержание"
         created_at: "Дата создания"
-        published: "Опубликована"  
+        published: "Опубликована"
+        description: "Краткое описание"  
     models:
       user: "Пользователь"
   devise:
