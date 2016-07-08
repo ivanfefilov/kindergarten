@@ -1,4 +1,6 @@
 class Post < ApplicationRecord
+  #acts_as_taggable :tags
+  
   validates :title, presence: true
   validates :body, presence: true
   validates :description, presence: true

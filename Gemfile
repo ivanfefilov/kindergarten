@@ -62,3 +62,5 @@ gem 'ajax-datatables-rails'
 gem "kaminari"
 
 gem 'active_link_to'
+
+gem 'acts-as-taggable-on', '~> 3.4'
