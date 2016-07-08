@@ -6,7 +6,7 @@ class PostDatatable < AjaxDatatablesRails::Base
   end
 
   def searchable_columns
-    @searchable_columns ||= ['Post.title']
+    @searchable_columns ||= ['Post.title', 'Post.category']
   end
 
   private
@@ -15,7 +15,7 @@ class PostDatatable < AjaxDatatablesRails::Base
     records.map do |record|
       [
         link_to(record.title, admin_post_path(record)),
-        record.description,
+        record.category.try(:title),
         (record.published ? 'Да' : 'Нет'), 
         I18n.l(record.created_at, format: :default),
         link_to('Редактировать', edit_admin_post_path(record)),

@@ -6,6 +6,9 @@
     <% end %>  
     <%= active_link_to admin_posts_url, :wrap_tag => :li, class_active: 'current' do %>
       <i class="glyphicon glyphicon-list"></i> Новости
-    <% end %>  
+    <% end %>
+    <%= active_link_to admin_categories_url, :wrap_tag => :li, class_active: 'current' do %>
+      <i class="glyphicon glyphicon-list"></i> Категории
+    <% end %>   
   </ul>
 </div>

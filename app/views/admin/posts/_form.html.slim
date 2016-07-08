@@ -12,6 +12,11 @@
       = f.text_field :title, class: 'form-control'
       
   .form-group
+    = f.label :category_id, class: "col-sm-2 control-label"
+    .col-sm-10
+      = f.select :category_id, Category.all.collect { |c| [ c.title, c.id ] }, {}, class: 'form-control' 
+      
+  .form-group
     = f.label :published, class: "col-sm-2 control-label"
     .col-sm-10
       = f.check_box :published, class: 'form-control'
@@ -29,4 +34,4 @@
   .form-group
     .col-sm-offset-2.col-sm-10
       = f.submit t('app.form.create'), class: 'btn btn-default'
-      = link_to t('admin.back'), admin_posts_path
+      = link_to t('admin.back'), :back

@@ -1,0 +1,17 @@
+= form_for [:admin, @category], html: {class: "form-horizontal"} do |f|
+  - if @category.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@category.errors.count, "error")} prohibited this admin_post from being saved:"
+      ul
+        - @category.errors.full_messages.each do |message|
+          li = message
+
+  .form-group
+    = f.label :title, class: "col-sm-2 control-label"
+    .col-sm-10
+      = f.text_field :title, class: 'form-control'
+       
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      = f.submit t('app.form.create'), class: 'btn btn-default'
+      = link_to t('admin.back'), :back

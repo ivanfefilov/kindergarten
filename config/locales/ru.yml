@@ -61,7 +61,11 @@ ru:
         body: "Содержание"
         created_at: "Дата создания"
         published: "Опубликована"
-        description: "Краткое описание"  
+        description: "Краткое описание"
+        category_id: "Категория"
+        category: "Категория"
+      category:
+        title: "Заголовок"    
     models:
       user: "Пользователь"
   devise:

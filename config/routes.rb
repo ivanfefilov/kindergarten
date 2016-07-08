@@ -7,6 +7,6 @@ Rails.application.routes.draw do
   
   namespace :admin do
     get '' => 'dashboard#index', as: 'root'
-    resources :posts, :users
+    resources :posts, :users, :categories
   end  
 end
