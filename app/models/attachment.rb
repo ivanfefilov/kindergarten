@@ -24,4 +24,15 @@ class Attachment < ApplicationRecord
   def image?
     file_type.match(/\Aimage\//).present?
   end
+  
+  def to_json
+    {
+      id: id,
+      type: file.content_type,
+      url: file.url,
+      thumb_url: file.url(:thumb),
+      size: file.size,
+      file_name: file.file.original_filename
+    }
+  end
 end

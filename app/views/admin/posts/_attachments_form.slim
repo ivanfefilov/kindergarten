@@ -1,0 +1,6 @@
+= form_for Attachment.new, url: admin_post_create_attachment_path(@post), html: { multipart: true, class: 'dropzone dropzone-previews' } do |p|
+  .fallback
+    = p.file_field :attachment
+    br
+    = p.submit "Upload"
+br

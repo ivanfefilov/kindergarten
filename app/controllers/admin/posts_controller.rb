@@ -1,5 +1,5 @@
 class Admin::PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_post, only: [:show, :edit, :update, :destroy, :attachments, :attachment_create, :attachment_destroy]
   layout 'admin'
 
   # GET /admin/posts
@@ -65,13 +65,41 @@ class Admin::PostsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def attachments
+    respond_to do |format|
+      format.json{ render json: @post.attachments.map{|attachment| attachment.to_json} }
+    end
+  end
+
+  def attachment_create
+    attachment = @post.attachments.build(attachment_params)
+    if attachment.save
+      render json: { success: true, id: attachment.id, attachment: attachment.to_json }, status: 200
+    else
+      render json: { success: false, error: @post.errors.full_messages.join(',')}, status: 400
+    end
+  end
+
+  def attachment_destroy
+    attachment = @post.attachments.find(params[:attachment_id])
+    if attachment.destroy
+      render json: { success: true, message: "File deleted from server" }
+    else
+      render json: { success: false, message: attachment.errors.full_messages.join(',') }
+    end
+  end
 
   private
     def set_post
-      @post = Post.find(params[:id])
+      @post = params.key?('post_id') ? Post.find(params[:post_id]) : Post.find(params[:id])
     end
 
     def post_params
       params.require(:post).permit(:title, :body, :published, :description, :category_id, :tag_list)
     end
+    
+    def attachment_params
+      params.require(:attachment).permit(:file)
+    end  
 end

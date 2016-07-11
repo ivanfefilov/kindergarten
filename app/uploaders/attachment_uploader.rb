@@ -16,6 +16,7 @@ class AttachmentUploader < CarrierWave::Uploader::Base
   end
 
   version :thumb, if: :image? do
-    process resize_and_pad: [200, 200]
+    #process resize_and_pad: [200, 200]
+    process resize_to_fit: [200, 200]
   end
 end
