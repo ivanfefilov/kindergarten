@@ -45,6 +45,12 @@ ru:
       sign_in: "Войти"
 
   activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            current_password:
+              blank: "не введён"
     attributes:
       user:
         current_password: "Текущий пароль"
