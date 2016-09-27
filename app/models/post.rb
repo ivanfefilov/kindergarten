@@ -12,5 +12,5 @@ class Post < ApplicationRecord
   accepts_nested_attributes_for :attachments, reject_if: :all_blank, allow_destroy: true
   
   scope :published, -> {where(published: true)}
-  scope :ordered, -> {order(:created_at)}
+  scope :ordered, -> {order('created_at DESC')}
 end

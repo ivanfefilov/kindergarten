@@ -1,6 +1,6 @@
 article.clearfix
   .post-date
-    = l(post.created_at, format: :short)
+    = l(post.created_at)
     span 
       = link_to '11 Комментариев', "#"
   h2= link_to post.title, post_path(post) 

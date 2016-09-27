@@ -3,7 +3,7 @@ class PostsController < ApplicationController
 
   # GET /posts
   def index
-    @posts = Post.ordered.page params[:page]
+    @posts = Post.published.ordered.page params[:page]
   end
 
   # GET /posts/1
