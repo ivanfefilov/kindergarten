@@ -1,0 +1,23 @@
+#menu.menu-right
+  ul
+    li
+      form.menu-search
+        div.form-group.header
+          i.icon-search.searchico
+          input type="text" placeholder="Поиск"
+          a href="/" class="close-menu"
+            i.icon-close
+    - if current_user && current_user.is_admin
+      li
+        = link_to '/admin' do
+          i.icon-menu2
+          = t('app.user.admin.title')
+    - if current_user 
+      li
+        = link_to edit_user_registration_path do
+          i.icon-user 
+          = t('app.user.edit.name', name: 'учёт. запись')
+      li
+        = link_to destroy_user_session_path, method: :delete do
+          i.icon-lock
+          = t('app.user.sign_out.title')
