@@ -1242,6 +1242,12 @@ footer .copyright {
 .tags li a:active {
 	background-color: #80B959; 
 }
+
+.pagination li.active a {
+	border: 1px solid #80B959;
+	background: #80B959 !important;
+	color: #FFF !important;
+}
 /* ------------------------------ Media -------------------------- */
 @media (min-width: 600px) {
 	.content .date {

@@ -1,0 +1,5 @@
+.row
+  .col-md-10.col-md-offset-1
+    = render partial: "post", collection: @posts
+  #comments_pagination
+    = paginate @posts, window: 2

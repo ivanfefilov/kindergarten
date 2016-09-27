@@ -63,6 +63,6 @@ gem "kaminari"
 
 gem 'active_link_to'
 
-gem 'acts-as-taggable-on', '~> 3.4'
+gem 'acts-as-taggable-on', '~> 4.0'
 
 gem 'dropzonejs-rails'

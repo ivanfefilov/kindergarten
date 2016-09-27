@@ -1,4 +1,11 @@
 ru:
+  views:
+    pagination:
+      first: "&laquo; Первая"
+      last: "Последняя &raquo;"
+      previous: "&lsaquo; Назад"
+      next: "Вперёд &rsaquo;"
+      truncate: "&hellip;"
   app:
     user:
       sign_in:

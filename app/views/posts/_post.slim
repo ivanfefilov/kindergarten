@@ -1,0 +1,9 @@
+article.clearfix
+  .post-date
+    = l(post.created_at, format: :short)
+    span 
+      = link_to '11 Комментариев', "#"
+  h2= link_to post.title, post_path(post) 
+  p= post.description
+  /= link_to 'Смотреть', post_path(post)
+    
