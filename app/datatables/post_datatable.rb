@@ -25,6 +25,6 @@ class PostDatatable < AjaxDatatablesRails::Base
   end
 
   def get_raw_records
-    Post.all
+    Post.ordered
   end  
 end

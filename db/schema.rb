@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160927054803) do
+ActiveRecord::Schema.define(version: 20160928044933) do
 
   create_table "attachments", force: :cascade do |t|
     t.integer  "parent_id",   null: false
@@ -52,6 +52,9 @@ ActiveRecord::Schema.define(version: 20160927054803) do
     t.boolean  "published",   default: true
     t.text     "description"
     t.integer  "category_id"
+    t.integer  "user_id"
+    t.index ["category_id"], name: "index_posts_on_category_id"
+    t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
   create_table "taggings", force: :cascade do |t|

@@ -29,7 +29,7 @@ class Admin::PostsController < ApplicationController
   # POST /admin/posts
   # POST /admin/posts.json
   def create
-    @post = Post.new(post_params)
+    @post = current_user.posts.build(post_params)
 
     respond_to do |format|
       if @post.save
@@ -96,7 +96,7 @@ class Admin::PostsController < ApplicationController
     end
 
     def post_params
-      params.require(:post).permit(:title, :body, :published, :description, :category_id, :tag_list)
+      params.require(:post).permit(:title, :body, :published, :description, :category_id, :tag_list, :user_id)
     end
     
     def attachment_params
