@@ -7,7 +7,9 @@ class User < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name, presence: true
   
-  has_many :posts
+  has_many :posts, dependent: :nullify
+  
+  scope :ordered, -> {order('created_at ASC')}
   
   def full_name
     [first_name, last_name].join(' ')

@@ -73,6 +73,10 @@ ru:
         unlock_token: "Токен разблокировки"
         first_name: "Имя"
         last_name: "Фамилия"
+        approved: "Подтверждён"
+        is_admin: "Админ?"
+        created_at: "Создан"
+        last_sign_in_at: 'Заходил'
       post:
         title: "Заголовок"
         body: "Содержание"

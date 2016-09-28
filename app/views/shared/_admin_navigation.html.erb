@@ -3,6 +3,9 @@
     <!-- Main menu -->
     <%= active_link_to admin_root_path, wrap_tag: :li, class_active: 'current' do %>
       <i class="glyphicon glyphicon-home"></i> Панель управления
+    <% end %>
+    <%= active_link_to admin_users_url, :wrap_tag => :li, class_active: 'current' do %>
+      <i class="glyphicon glyphicon-list"></i> Пользователи
     <% end %>  
     <%= active_link_to admin_posts_url, :wrap_tag => :li, class_active: 'current' do %>
       <i class="glyphicon glyphicon-list"></i> Новости

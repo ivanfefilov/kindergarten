@@ -1,0 +1,16 @@
+.panel-heading
+  .panel-title Пользователи
+  /= link_to 'Добавить категорию', new_admin_category_path, class: 'btn btn-default btn-new'
+.panel-body cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered"
+  table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="usersTable" data-source=(admin_users_path(format: :json))
+    thead
+      tr
+        th= t 'activerecord.attributes.user.first_name'
+        th= t 'activerecord.attributes.user.is_admin'
+        th= t 'activerecord.attributes.user.approved'
+        th= t 'activerecord.attributes.user.created_at'
+        th= t 'activerecord.attributes.user.last_sign_in_at'
+        th
+        th
+        
+    tbody
