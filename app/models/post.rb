@@ -7,6 +7,7 @@ class Post < ApplicationRecord
   validates :description, length: { maximum: 500 }
   
   has_many :attachments, as: :parent, dependent: :destroy, autosave: true, class_name: 'Attachment'
+  has_many :comments, dependent: :destroy
   belongs_to :category
   belongs_to :author, class_name: 'User', foreign_key: 'user_id'
   
