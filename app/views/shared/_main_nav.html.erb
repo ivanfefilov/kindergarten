@@ -8,7 +8,7 @@
         <i class="icon-menu2"></i>
       <% end %>
 			<% if user_signed_in? %>
-				<%= link_to "Привет, #{current_user.first_name}. #{t('devise.sessions.sign_out')}?", destroy_user_session_path, method: :delete, class: "btn btn-blog outline-white pull-right" %>
+				<%= link_to "Привет, #{current_user.first_name}", edit_user_registration_path, class: "btn btn-blog outline-white pull-right" %>
     	<% else %>
 				<%= link_to t('app.form.sign_in'), new_user_session_path, class: "btn btn-blog outline-white pull-right" %> 
 			<% end %>

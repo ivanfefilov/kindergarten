@@ -17,6 +17,8 @@ ru:
         link: "Создать новую учетную запись"
       sign_out:
         title: "Выйти"
+      return_home:
+        title: "Вернуться на сайт"  
       admin:
         title: "Панель управления"    
       password:
