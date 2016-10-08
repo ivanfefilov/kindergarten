@@ -15,4 +15,5 @@ class Post < ApplicationRecord
   
   scope :published, -> {where(published: true)}
   scope :ordered, -> {order('created_at DESC')}
+  scope :by_category, -> (category_id) {where(category_id: category_id)}
 end

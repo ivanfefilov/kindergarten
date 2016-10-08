@@ -5,7 +5,11 @@ class PostsController < ApplicationController
 
   # GET /posts
   def index
-    @posts = Post.published.ordered.page params[:page]
+    if params[:category_id].present? 
+      @posts = Post.by_category(params[:category_id]).published.ordered.page params[:page]
+    else
+      @posts = Post.published.ordered.page params[:page]
+    end  
   end
 
   # GET /posts/1
