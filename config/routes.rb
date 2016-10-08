@@ -5,7 +5,11 @@ Rails.application.routes.draw do
   root 'pages#home' 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   
-  resources :posts
+  resources :posts do 
+    member do 
+      post 'comments', to: 'posts#create_comment', as: :create_comment 
+    end
+  end  
   
   namespace :admin do
     get '' => 'dashboard#index', as: 'root'

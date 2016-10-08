@@ -1,0 +1,10 @@
+= form_tag create_comment_post_path(@post), remote: true do 
+  .row
+    .col-xs-12.col-sm-12.col-md-12.wow.fadeInUp
+      .form-group
+        = label_tag 'body', 'Сообщение', class: 'control-label'
+        .controls
+          = text_area_tag 'body', nil, class: 'form-control input-lg requiredField', rows: "3", required: true
+      .col-xs-12.col-sm-6.col-md-6
+        .form-group
+          = submit_tag 'Добавить', class: 'btn'

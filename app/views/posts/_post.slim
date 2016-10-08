@@ -3,7 +3,7 @@ article.clearfix
     = l(post.created_at)  
     = post.author.present? ? " | #{post.author.full_name}" : ''
     span 
-      = link_to '11 Комментариев', "#"
+      = link_to t('misc.comments', count: post.comments.count), post_path(post, anchor: 'comments')
   h2= link_to post.title, post_path(post) 
   p= post.description
   /= link_to 'Смотреть', post_path(post)

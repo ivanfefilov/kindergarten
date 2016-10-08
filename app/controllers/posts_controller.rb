@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
   before_action :check_approved
-  before_action :set_post, only: :show
+  before_action :set_post, only: %i(show create_comment)
 
   # GET /posts
   def index
@@ -11,6 +11,15 @@ class PostsController < ApplicationController
   # GET /posts/1
   def show
   end
+  
+  def create_comment
+    @comment = @post.comments.create(user_id: current_user.id, body: params[:body])
+    
+    respond_to do |format|
+      format.html {redirect_to posts_path}
+      format.js 
+    end   
+  end  
 
   private
   

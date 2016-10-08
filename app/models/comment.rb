@@ -4,4 +4,6 @@ class Comment < ApplicationRecord
   
   validates :body, presence: true  
   validates :body, length: { maximum: 300 }
+  
+  scope :ordered, -> {order('created_at DESC')}
 end

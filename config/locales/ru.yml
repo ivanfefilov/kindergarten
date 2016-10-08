@@ -7,6 +7,8 @@ ru:
       next: "Вперёд &rsaquo;"
       truncate: "&hellip;"
   app:
+    comments:
+      add: "Добавить комментарий"
     user:
       sign_in:
         title: "Войти в личный кабинет"
@@ -87,6 +89,8 @@ ru:
         description: "Краткое описание"
         category_id: "Категория"
         category: "Категория"
+      comment: 
+        body: "Комментарий"  
       category:
         title: "Заголовок"    
     models:
@@ -207,4 +211,11 @@ ru:
     formats:
       default: "%d-%m-%Y"
       short: "%b %d"
-      long: "%B %d, %Y"            
+      long: "%B %d, %Y"  
+  misc:
+    comments:
+      few: "%{count} комментариев"
+      many: "%{count} комментариев"
+      one: "1 комментарий"
+      other: "%{count} комментариев"    
+                  
