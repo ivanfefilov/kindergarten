@@ -41,19 +41,14 @@
           </div>
         </div>
 
-        <!-- <div class="col-sm-4 col-md-4 footer-widget clearfix">
-          <h3>Тэги</h3>
+        <div class="col-sm-4 col-md-4 footer-widget clearfix">
+          <h3>Категории</h3>
           <ul class="tags">
-            <li><a href="contact.html#">OpenPGP</a></li>
-            <li><a href="contact.html#">Django</a></li>
-            <li><a href="contact.html#">Bitcoin</a></li>
-            <li><a href="contact.html#">Security</a></li>
-            <li><a href="contact.html#">GNU/Linux</a></li>
-            <li><a href="contact.html#">Git</a></li>
-            <li><a href="contact.html#">Homebrew</a></li>
-            <li><a href="contact.html#">Debian</a></li>                            
+            <% Category.all.each do |category| %>
+              <li><%= link_to category.title, posts_path(category_id: category) %></li>
+            <% end %>                
           </ul>
-        </div> -->
+        </div>
       </div>
     </div>
     <div class="copyright">

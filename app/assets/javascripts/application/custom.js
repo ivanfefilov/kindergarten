@@ -19,9 +19,9 @@ $(document).ready(function() {
 		$('#wrap').toggleClass('menu-open');
 		return false;
 	});	
-	$('.submenu a').click(function(){
+	$('#categoriesMenuLink').click(function(){
 		$(this).parent().toggleClass('submenu-open');
-		//return false;
+		return false;
 	});
 
 	/* validate comment ======================================= */

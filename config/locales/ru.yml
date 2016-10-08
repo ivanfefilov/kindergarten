@@ -9,6 +9,8 @@ ru:
   app:
     comments:
       add: "Добавить комментарий"
+    categories:
+      title: "Категории"  
     user:
       sign_in:
         title: "Войти в личный кабинет"

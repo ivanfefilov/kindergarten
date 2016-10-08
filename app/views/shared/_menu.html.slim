@@ -17,7 +17,17 @@
         = link_to edit_user_registration_path do
           i.icon-user 
           = t('app.user.edit.name', name: 'учёт. запись')
+      li.submenu
+        = link_to "#", id: 'categoriesMenuLink' do
+          i.icon-books
+          = t('app.categories.title')
+          b.caret
+        ul.submenu-list
+          - Category.order(:title).each do |category|
+            li= link_to posts_path(category_id: category) do 
+              = category.title
+              span.badge= category.posts.count 
       li
         = link_to destroy_user_session_path, method: :delete do
           i.icon-lock
-          = t('app.user.sign_out.title')
+          = t('app.user.sign_out.title')        
