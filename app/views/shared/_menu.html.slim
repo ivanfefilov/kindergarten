@@ -1,10 +1,10 @@
 #menu.menu-right
   ul
     li
-      form.menu-search
+      = form_tag posts_path, method: :get, class: 'menu-search' do
         div.form-group.header
           i.icon-search.searchico
-          input type="text" placeholder="Поиск"
+          = text_field_tag :search, nil, placeholder: "Поиск"
           a href="/" class="close-menu"
             i.icon-close
     - if current_user && current_user.is_admin

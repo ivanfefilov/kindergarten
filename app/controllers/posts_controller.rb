@@ -10,7 +10,8 @@ class PostsController < ApplicationController
       @posts = Post.by_category(params[:category_id]).published.ordered.page params[:page]
     else
       @posts = Post.published.ordered.page params[:page]
-    end  
+    end
+    @posts = @posts.find_by_title(params[:search]) if params.key?(:search)  
   end
 
   # GET /posts/1
