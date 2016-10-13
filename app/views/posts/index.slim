@@ -1,5 +1,16 @@
 .row
   .col-md-10.col-md-offset-1
-    = render partial: "post", collection: @posts
+    - if @posts.any?
+      = render partial: "post", collection: @posts
+    - else
+      h1= t 'app.posts.not_found'
+      = link_to t('app.navigation.main'), root_path   
   #comments_pagination
     = paginate @posts, window: 2
+
+- content_for :hero do
+  - if @category.present?
+    h1= @category.title
+  - else   
+    h1 ГРУППА, ДЕТСКИЙ САД "ЖУРАВЛИК"
+    h2 <b>Уважаемые родители,</b> здесь вы можете посмотреть все объявления и<br>новости нашей группы

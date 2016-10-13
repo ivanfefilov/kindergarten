@@ -5,7 +5,7 @@
       = @post.author.present? ? " | #{@post.author.full_name}" : ''
       span 
         = link_to t('misc.comments', count: @post.comments.count), "#comments"
-    h2= @post.title       
+    /h2= @post.title       
     div
       p
         = raw @post.body
@@ -19,3 +19,5 @@
     div
       = link_to t('devise.shared.links.back'), :back    
             
+- content_for :hero do 
+  h1= @post.title

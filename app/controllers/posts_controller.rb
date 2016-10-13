@@ -5,7 +5,8 @@ class PostsController < ApplicationController
 
   # GET /posts
   def index
-    if params[:category_id].present? 
+    if params[:category_id].present?
+      @category = Category.find params[:category_id] 
       @posts = Post.by_category(params[:category_id]).published.ordered.page params[:page]
     else
       @posts = Post.published.ordered.page params[:page]

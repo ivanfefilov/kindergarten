@@ -7,10 +7,14 @@ ru:
       next: "Вперёд &rsaquo;"
       truncate: "&hellip;"
   app:
+    navigation:
+      main: 'На главную'
     comments:
       add: "Добавить комментарий"
     categories:
-      title: "Категории"  
+      title: "Категории"
+    posts:
+      not_found: "Новости не найдены"    
     user:
       sign_in:
         title: "Войти в личный кабинет"
