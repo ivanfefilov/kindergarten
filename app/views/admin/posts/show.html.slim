@@ -2,7 +2,13 @@ h1= @post.title
 
 div= raw @post.body
 
+- if @post.attachments.any?
+  div
+    h2= t 'app.posts.attachments'
+    - @post.attachments.each do |attachment|
+      = image_tag attachment.path, width: '100px' if attachment.image?
 
-= link_to 'Редактировать', edit_admin_post_path(@post), class: 'btn btn-default'
+
+= link_to t('app.form.edit'), edit_admin_post_path(@post), class: 'btn btn-default'
 '|
 = link_to t('admin.back'), admin_posts_path

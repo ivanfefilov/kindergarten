@@ -9,6 +9,10 @@
     div
       p
         = raw @post.body
+    
+    - if @post.attachments.any?
+ 
+        
     h3= t('misc.comments', count: @post.comments.count)	
     div.media
       hr
@@ -21,3 +25,4 @@
             
 - content_for :hero do 
   h1= @post.title
+	 

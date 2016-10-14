@@ -14,7 +14,8 @@ ru:
     categories:
       title: "Категории"
     posts:
-      not_found: "Новости не найдены"    
+      not_found: "Новости не найдены"
+      attachments: "Вложения"    
     user:
       sign_in:
         title: "Войти в личный кабинет"
@@ -61,6 +62,7 @@ ru:
       save: "Сохранить"
       send: "Отправить"
       update: "Обновить"
+      edit: "Редактировать"
       sure: "Вы уверены?"
       create: "Создать"
       sign_in: "Войти"
