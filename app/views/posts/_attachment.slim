@@ -1,3 +1,3 @@
 - if attachment.image?
   .col-sm-4.col-md-4
-    = link_to image_tag(attachment.path, class: 'img-responsive image-attachment'), "#"
+    = link_to image_tag(attachment.path, class: 'img-responsive image-attachment'), attachment.path, class: 'gallery-image'

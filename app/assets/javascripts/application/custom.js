@@ -10,6 +10,8 @@
 
 $(document).ready(function() {
 	
+	$('a.gallery-image').colorbox({rel:'gal', maxWidth: '800px'});
+	
 	if($('.alert')){
 		setTimeout(function(){$('.alert').fadeOut("slow"); }, 5000)
 	}
