@@ -759,7 +759,7 @@ article .btn {
 }
 
 .post-popular::before {
-	content: 'Popular post';
+	content: 'Вложения';
 	position: absolute;
 	left: 0;
 	top: -12px;
@@ -1248,6 +1248,8 @@ footer .copyright {
 	background: #80B959 !important;
 	color: #FFF !important;
 }
+
+.image-attachment {padding-bottom: 10px;}
 /* ------------------------------ Media -------------------------- */
 @media (min-width: 600px) {
 	.content .date {
