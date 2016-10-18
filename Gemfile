@@ -50,6 +50,9 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+# Use Unicorn as the app server
+gem 'unicorn'
+
 gem 'devise', '4.0.0.rc2'
 gem 'slim-rails'
 gem 'bootstrap-sass', '~> 3.3.5'
@@ -68,3 +71,5 @@ gem 'active_link_to'
 gem 'acts-as-taggable-on', '~> 4.0'
 
 gem 'dropzonejs-rails'
+gem "foreman"
+gem "foreman-export-initscript", :github => "webgradus/foreman-export-initscript"
