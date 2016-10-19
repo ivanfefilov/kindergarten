@@ -33,7 +33,7 @@ namespace :foreman do
   desc "Export the Procfile to Ubuntu's upstart scripts"
   task :export do
     on roles(:app) do
-      execute "cd #{current_path} && bundle exec foreman export initscript /etc/init.d " +
+      execute "cd #{current_path} && /usr/local/rvm/bin/rvm 2.2.3 do bundle exec foreman export initscript /etc/init.d " +
       "-f ./Procfile.production -a #{fetch(:application)} -u #{fetch(:user)} -l #{shared_path}/log"
       execute "chmod 755 /etc/init.d/#{fetch(:application)}"
     end
