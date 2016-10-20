@@ -19,7 +19,7 @@ set :rails_env, "production"
 # set :use_sudo, false
 
 set :linked_files, %w{config/database.yml config/secrets.yml db/production.sqlite3} # Rails 4.1 uses secrets.yml file
-set :linked_dirs, %w{log tmp/pids tmp/sockets}
+set :linked_dirs, %w{log tmp/pids tmp/sockets tmp/cache public/uploads public/attachment}
 
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 set :keep_releases, 5
