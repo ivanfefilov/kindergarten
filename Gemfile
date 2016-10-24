@@ -73,3 +73,4 @@ gem 'acts-as-taggable-on', '~> 4.0'
 gem 'dropzonejs-rails'
 gem "foreman"
 gem "foreman-export-initscript", :github => "webgradus/foreman-export-initscript"
+gem "figaro"
