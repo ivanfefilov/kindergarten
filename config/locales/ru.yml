@@ -74,6 +74,8 @@ ru:
           attributes:
             current_password:
               blank: "не введён"
+            email:
+              taken: "уже зарегестрирован на сайте"  
     attributes:
       user:
         current_password: "Текущий пароль"

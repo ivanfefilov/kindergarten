@@ -12,7 +12,21 @@ class User < ApplicationRecord
   
   scope :ordered, -> {order('created_at ASC')}
   
+  after_create :send_new_user_signup_notif
+  after_update :notify_user_if_approved_changed
+  
   def full_name
     [first_name, last_name].join(' ')
-  end           
+  end
+  
+  private
+  
+  def send_new_user_signup_notif
+    UserMailer.new_user_email(self).deliver_now
+  end
+  
+  def notify_user_if_approved_changed
+    UserMailer.approved_email(self).deliver_now if approved_changed?(from: false, to: true)
+    UserMailer.blocked_email(self).deliver_now if approved_changed?(from: true, to: false)
+  end               
 end

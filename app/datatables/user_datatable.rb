@@ -14,7 +14,8 @@ class UserDatatable < AjaxDatatablesRails::Base
   def data
     records.map do |record|
       [
-        link_to(record.full_name, admin_user_path(record)),
+        link_to(record.full_name, edit_admin_user_path(record)),
+        record.email,
         (record.is_admin ? 'Да' : 'Нет'),
         (record.approved ? 'Да' : 'Нет'), 
         I18n.l(record.created_at, format: :default),

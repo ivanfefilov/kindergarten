@@ -15,7 +15,9 @@ module Kindergarten
     
     # Default e-mail address which will be shown in the "from" devise emails, initializers/devise.rb,
     config.noreply = 'noreply@crane15.ru'
-
+    
+    config.mail_to = 'ivfefilov@gmail.com'
+        
     # Default host for action mailer, initializers/mailer.rb
     config.host = 'crane15.ru'
   end
