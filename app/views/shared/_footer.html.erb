@@ -11,12 +11,12 @@
               <span class="caption">Новостей</span>
             </div>
             <div class="line">
-              <span class="counter">0</span>
+              <span class="counter"><%= Comment.all.count %></span>
               <span class="caption">Комментариев</span>
             </div>
             <div class="line">
-              <span class="counter">0</span>
-              <span class="caption">Авторов</span>
+              <span class="counter"><%= User.admins.count %></span>
+              <span class="caption"><%= t('misc.author') %></span>
             </div>                    
           </div>
         </div>

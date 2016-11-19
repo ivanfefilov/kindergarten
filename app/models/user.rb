@@ -12,6 +12,7 @@ class User < ApplicationRecord
   
   scope :ordered, -> {order('created_at ASC')}
   scope :approved, -> {where(approved: true)}
+  scope :admins, -> {where(is_admin: true)}
   
   after_create :send_new_user_signup_notif
   after_update :notify_user_if_approved_changed
