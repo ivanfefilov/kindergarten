@@ -45,6 +45,7 @@ group :development do
   gem "letter_opener"
   gem 'capistrano-rails'
   gem 'capistrano-rvm'
+  gem 'capistrano3-delayed-job', '~> 1.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

@@ -28,6 +28,8 @@ set :keep_releases, 5
 set :rvm_type, :system
 set :rvm_ruby_version, '2.2.3'
 
+set :delayed_job_pid_dir, '/tmp'
+
 # - for unicorn - #
 namespace :foreman do
   desc "Export the Procfile to Ubuntu's upstart scripts"
