@@ -74,3 +74,5 @@ gem 'dropzonejs-rails'
 gem "foreman"
 gem "foreman-export-initscript", :github => "webgradus/foreman-export-initscript"
 gem "figaro"
+
+gem 'delayed_job_active_record'

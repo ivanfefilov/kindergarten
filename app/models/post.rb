@@ -11,10 +11,18 @@ class Post < ApplicationRecord
   belongs_to :category
   belongs_to :author, class_name: 'User', foreign_key: 'user_id'
   
+  after_create :notify_new_post_created
+  
   accepts_nested_attributes_for :attachments, reject_if: :all_blank, allow_destroy: true
   
   scope :published, -> {where(published: true)}
   scope :ordered, -> {order('created_at DESC')}
   scope :by_category, -> (category_id) {where(category_id: category_id)}
   scope :find_by_title, -> (search) {where('title LIKE ?', "%#{search}%")}
+  
+  private 
+  
+  def notify_new_post_created
+    NewPostNotifyJob.perform_later(self) 
+  end  
 end

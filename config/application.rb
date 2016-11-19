@@ -14,11 +14,12 @@ module Kindergarten
     config.i18n.default_locale = :ru
     
     # Default e-mail address which will be shown in the "from" devise emails, initializers/devise.rb,
-    config.noreply = 'noreply@crane15.ru'
+    config.noreply = 'noreply@журавлик15.рф'
     
     config.mail_to = 'ivfefilov@gmail.com'
         
     # Default host for action mailer, initializers/mailer.rb
-    config.host = 'crane15.ru'
+    config.host = 'журавлик15.рф'
+    config.active_job.queue_adapter = :delayed_job
   end
 end

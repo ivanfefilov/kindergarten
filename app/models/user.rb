@@ -11,6 +11,7 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   
   scope :ordered, -> {order('created_at ASC')}
+  scope :approved, -> {where(approved: true)}
   
   after_create :send_new_user_signup_notif
   after_update :notify_user_if_approved_changed

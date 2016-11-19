@@ -1,0 +1,3 @@
+<h1>Привет, <%= @user.full_name %></h1>
+<p>Добавлена новость "<%= @post.title %>"</p>
+<p>Для её просмотра перейдите по ссылке <a href="http://<%= Rails.application.config.host %>/posts/<%= @post.id %>">http://<%= Rails.application.config.host %>/posts/<%= @post.id %></a>.</p>
