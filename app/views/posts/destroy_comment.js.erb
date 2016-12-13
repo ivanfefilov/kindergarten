@@ -1,0 +1,3 @@
+$('.media [data-comment="<%= @comment.id %>"]').remove()
+$('h3[data-comments]').text("<%= t('misc.comments', count: @post.comments.count) %>")
+$('.post-date span a').text("<%= t('misc.comments', count: @post.comments.count) %>")

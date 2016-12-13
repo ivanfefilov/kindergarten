@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
   before_action :check_approved
-  before_action :set_post, only: %i(show create_comment)
+  before_action :set_post, only: %i(show create_comment destroy_comment)
   after_action :discard_flash, only: %i(create_comment destroy_comment)
 
   # GET /posts
@@ -29,11 +29,12 @@ class PostsController < ApplicationController
   end  
   
   def destroy_comment
-    @comment = @post.comments.create(user_id: current_user.id, body: params[:body])
-    
+    @comment = @post.comments.find params[:comment_id]
+    @comment.destroy if @comment
+        
     respond_to do |format|
       format.html {redirect_to posts_path}
-      format.js {flash.now[:notice] = 'Комментарий успешно удалён'}
+      format.js 
     end   
   end
   

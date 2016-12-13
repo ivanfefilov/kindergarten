@@ -21,6 +21,10 @@ class User < ApplicationRecord
     [first_name, last_name].join(' ')
   end
   
+  def admin?
+    is_admin
+  end  
+  
   private
   
   def send_new_user_signup_notif

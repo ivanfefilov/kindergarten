@@ -1,7 +1,10 @@
-.media
+.media data-comment=comment.id
   .media-body
-    h4.media-heading 
+    h4.media-heading
       = comment.author.full_name
+      | 
+      - if current_user.admin?
+        = link_to '(yдалить)', destroy_comment_post_path(@post, comment), method: :delete, remote: true, data: {confirm: 'Вы действительно хотите удалить комментарий?'}
       span= l(comment.created_at)
     p= comment.body
       
