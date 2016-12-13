@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   before_action :authenticate_user!
   before_action :check_approved
   before_action :set_post, only: %i(show create_comment)
+  after_action :discard_flash, only: %i(create_comment destroy_comment)
 
   # GET /posts
   def index
@@ -23,7 +24,7 @@ class PostsController < ApplicationController
     
     respond_to do |format|
       format.html {redirect_to posts_path}
-      format.js 
+      format.js {flash.now[:notice] = 'Комментарий успешно создан'}
     end   
   end  
   
@@ -32,7 +33,7 @@ class PostsController < ApplicationController
     
     respond_to do |format|
       format.html {redirect_to posts_path}
-      format.js 
+      format.js {flash.now[:notice] = 'Комментарий успешно удалён'}
     end   
   end
   
@@ -47,5 +48,9 @@ class PostsController < ApplicationController
       render 'pages/user_not_approved'
       return
     end  
-  end  
+  end 
+  
+  def discard_flash
+    flash.discard if request.xhr? 
+  end   
 end
