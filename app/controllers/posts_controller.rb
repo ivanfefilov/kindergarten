@@ -26,7 +26,16 @@ class PostsController < ApplicationController
       format.js 
     end   
   end  
-
+  
+  def destroy_comment
+    @comment = @post.comments.create(user_id: current_user.id, body: params[:body])
+    
+    respond_to do |format|
+      format.html {redirect_to posts_path}
+      format.js 
+    end   
+  end
+  
   private
   
   def set_post

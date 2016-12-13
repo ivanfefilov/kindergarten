@@ -224,7 +224,7 @@ ru:
       long: "%B %d, %Y"  
   misc:
     comments:
-      few: "%{count} комментариев"
+      few: "%{count} комментария"
       many: "%{count} комментариев"
       one: "1 комментарий"
       other: "%{count} комментариев"

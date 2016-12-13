@@ -1,1 +1,4 @@
 $("#comments").prepend("<%= j render partial: 'comment', locals: {comment: @comment} %>")
+$('h3[data-comments]').text("<%= t('misc.comments', count: @post.comments.count) %>")
+$('.post-date span a').text("<%= t('misc.comments', count: @post.comments.count) %>")
+$('textarea[name="body"]').val('')

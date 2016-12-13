@@ -15,7 +15,8 @@
         .row
           = render partial: 'attachment', collection: @post.attachments 
         
-    h3= t('misc.comments', count: @post.comments.count)	
+    h3[data-comments]
+      = t('misc.comments', count: @post.comments.count)	
     div.media
       hr
       #comments

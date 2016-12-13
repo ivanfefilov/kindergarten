@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   
   resources :posts do 
     member do 
-      post 'comments', to: 'posts#create_comment', as: :create_comment 
+      post 'comments', to: 'posts#create_comment', as: :create_comment
+      delete 'comments', to: 'posts#destroy_comment', as: :destroy_comment 
     end
   end  
   
