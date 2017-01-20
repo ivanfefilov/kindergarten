@@ -7,4 +7,4 @@
           = text_area_tag 'body', nil, class: 'form-control input-lg requiredField', rows: "3", required: true
       .col-xs-12.col-sm-6.col-md-6
         .form-group
-          = submit_tag 'Добавить', class: 'btn'
+          = submit_tag 'Добавить', class: 'btn', data: {disable_with: "Saving..."}
