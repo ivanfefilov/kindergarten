@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161119070327) do
+ActiveRecord::Schema.define(version: 20161119074458) do
 
   create_table "attachments", force: :cascade do |t|
     t.integer  "parent_id",   null: false
@@ -67,6 +67,17 @@ ActiveRecord::Schema.define(version: 20161119070327) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["priority", "run_at"], name: "delayed_jobs_priority"
+  end
+
+  create_table "logged_exceptions", force: :cascade do |t|
+    t.string   "exception_class"
+    t.string   "controller_name"
+    t.string   "action_name"
+    t.text     "message"
+    t.text     "backtrace"
+    t.text     "environment"
+    t.text     "request"
+    t.datetime "created_at"
   end
 
   create_table "posts", force: :cascade do |t|

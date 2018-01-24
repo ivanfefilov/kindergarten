@@ -2,6 +2,8 @@
 
 class AttachmentUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
+  
+  process :exif_rotation
 
   def store_dir
     "attachment/#{model.id}"
