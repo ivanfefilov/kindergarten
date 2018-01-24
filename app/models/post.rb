@@ -3,8 +3,8 @@ class Post < ApplicationRecord
   
   validates :title, presence: true
   #validates :body, presence: true
-  validates :description, presence: true
-  validates :description, length: { maximum: 500 }
+  #validates :description, presence: true
+  #validates :description, length: { maximum: 500 }
   
   has_many :attachments, as: :parent, dependent: :destroy, autosave: true, class_name: 'Attachment'
   has_many :comments, dependent: :destroy
@@ -23,6 +23,9 @@ class Post < ApplicationRecord
   private 
   
   def notify_new_post_created
-    NewPostNotifyJob.perform_later(self) 
+    #NewPostNotifyJob.perform_later(self)
+    User.approved.each do |user|
+      UserMailer.new_post_email(user, self).deliver_now
+    end   
   end  
 end
