@@ -10,7 +10,7 @@ window.dropzoneInit= (autosave) ->
 		maxFiles: 20
 		parallelUploads: 20
 		addRemoveLinks: true
-		dictMaxFilesExceeded: "Вы не можете загрузить больше 20-ти фотографий"
+		dictMaxFilesExceeded: "Вы не можете загрузить больше 20-ти фотографий за один раз"
 		dictRemoveFile: "Удалить"
 		dictCancelUploadConfirmation: "Отменить загрузку?"
 

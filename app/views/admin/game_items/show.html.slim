@@ -1,0 +1,12 @@
+h1= @game_item.title
+
+div= @game_item.eatable
+
+- if @game_item.attachment.present?
+  div
+    = image_tag @game_item.attachment.path, width: '300px' if @game_item.attachment.image?
+
+
+= link_to t('app.form.edit'), edit_admin_game_item_path(@game_item), class: 'btn btn-default'
+'|
+= link_to t('admin.back'), admin_game_items_path

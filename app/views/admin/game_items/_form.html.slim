@@ -1,0 +1,35 @@
+= form_for [:admin, @game_item], html: {class: "form-horizontal"} do |f|
+  - if @game_item.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@game_item.errors.count, "error")} prohibited this game item from being saved:"
+      ul
+        - @game_item.errors.full_messages.each do |message|
+          li = message
+
+  .form-group
+    = f.label :title, class: "col-sm-2 control-label"
+    .col-sm-10
+      = f.text_field :title, class: 'form-control'
+          
+  .form-group
+    = f.label :eatable, class: "col-sm-2 control-label"
+    .col-sm-10
+      = f.check_box :eatable, class: 'form-control'
+
+  = field_set_tag "Image" do
+    = f.fields_for :attachment do |af|
+      .splitContainer
+        dl.half
+          dt= af.label :attachment, "Image"
+          dd
+            p= af.file_field :file
+            = af.hidden_field :parent_type, value: "GameItem"
+            = af.hidden_field :parent_id, value: @game_item.id
+        dl.half
+          dt
+          dd= image_tag(@game_item.attachment.path) unless @game_item.attachment.new_record?    
+        
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      = f.submit t('app.form.create'), class: 'btn btn-default'
+      = link_to t('admin.back'), :back

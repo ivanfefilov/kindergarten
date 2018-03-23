@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   
   root 'pages#home' 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get 'game' => 'pages#game'
   
   resources :posts do 
     member do 
@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   
   namespace :admin do
     get '' => 'dashboard#index', as: 'root'
-    resources :users, :categories
+    resources :users, :categories, :game_items
     resources :posts do 
       get 'attachments', to: 'posts#attachments', as: :attachments
       post 'attachments', to: 'posts#attachment_create', as: :create_attachment

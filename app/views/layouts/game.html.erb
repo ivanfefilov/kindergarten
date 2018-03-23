@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <%= render 'shared/head' %>
+  <%= stylesheet_link_tag 'game' %>
+  <body id='home'>
+    <div class="container game-content">
+      <%= render 'shared/flash_messages' %>
+      <%= yield %>
+    </div>
+    <%= javascript_include_tag 'application' %>
+    <%= yield :javascripts %>  
+  </body>
+</html>
