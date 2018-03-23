@@ -78,3 +78,6 @@ gem "figaro"
 
 gem 'delayed_job_active_record'
 gem 'daemons'
+
+gem "webpacker" 
+gem "react-rails"

@@ -1,13 +1,29 @@
 <!DOCTYPE html>
 <html>
-  <%= render 'shared/head' %>
-  <%= stylesheet_link_tag 'game' %>
+  <head>
+    <title>Журавлик</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'game' %>
+    <link rel="shortcut icon" href="img/ico/32.png" sizes="32x32" type="image/png"/>
+    <link rel="apple-touch-icon-precomposed" href="<%= image_path('60.png') %>" type="image/png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<%= image_path('72.png') %>" type="image/png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="<%= image_path('120.png') %>" type="image/png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="<%= image_path('152.png') %>" type="image/png"/>
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+     <%= javascript_pack_tag 'application' %>
+  </head>
   <body id='home'>
     <div class="container game-content">
       <%= render 'shared/flash_messages' %>
       <%= yield %>
     </div>
-    <%= javascript_include_tag 'application' %>
-    <%= yield :javascripts %>  
+    <%#= javascript_include_tag 'application' %>
+    <%#= yield :javascripts %>  
   </body>
 </html>
