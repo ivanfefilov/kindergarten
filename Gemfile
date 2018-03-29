@@ -81,3 +81,4 @@ gem 'daemons'
 
 gem "webpacker" 
 gem "react-rails"
+gem "active_model_serializers"

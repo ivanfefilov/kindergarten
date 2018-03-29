@@ -10,7 +10,9 @@ Rails.application.routes.draw do
       post 'comments', to: 'posts#create_comment', as: :create_comment
       delete 'comments/:comment_id', to: 'posts#destroy_comment', as: :destroy_comment 
     end
-  end  
+  end 
+  
+  resources :game_items, only: :index 
   
   namespace :admin do
     get '' => 'dashboard#index', as: 'root'

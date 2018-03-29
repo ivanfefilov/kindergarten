@@ -7,7 +7,6 @@ class PagesController < ApplicationController
    end
    
    def game
-     @gameItems = GameItem.all.to_json
      render layout: "game"
    end          
 end
